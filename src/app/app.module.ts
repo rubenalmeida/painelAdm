@@ -40,6 +40,21 @@ import { BsDropdownModule } from 'ngx-bootstrap/dropdown';
 import { TabsModule } from 'ngx-bootstrap/tabs';
 import { ChartsModule } from 'ng2-charts/ng2-charts';
 
+
+//  FIRE BASE
+//import { AngularFirestore } from 'angularfire2/firestore';
+import { AngularFireModule } from 'angularfire2';
+
+export const firebaseConfig = {
+  apiKey: "AIzaSyD1UuxbX4K48lgEabXAtTl8oQzvcqKEgj8",
+  authDomain: "paineladm-e08c6.firebaseapp.com",
+  databaseURL: "https://paineladm-e08c6.firebaseio.com",
+  projectId: "paineladm-e08c6",
+  storageBucket: "",
+  messagingSenderId: "502719140515"
+};
+
+
 @NgModule({
   imports: [
     BrowserModule,
@@ -52,7 +67,8 @@ import { ChartsModule } from 'ng2-charts/ng2-charts';
     PerfectScrollbarModule,
     BsDropdownModule.forRoot(),
     TabsModule.forRoot(),
-    ChartsModule
+    ChartsModule,
+    AngularFireModule.initializeApp(firebaseConfig)
   ],
   declarations: [
     AppComponent,
